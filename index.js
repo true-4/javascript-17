@@ -30,3 +30,31 @@ outer.addEventListener('click', () => {
 inner.addEventListener('click', () => {
   console.log('Вплытие')
 })
+
+const box = document.querySelector('#box')
+
+box.addEventListener('mouseover', () => {
+  box.style.background = 'green'
+})
+
+box.addEventListener('mouseout', () => {
+  box.style.background = 'lightblue'
+})
+
+box.addEventListener('contextmenu', (event) => {
+  event.preventDefault()
+  alert('Контекстное меню')
+})
+
+const input = document.querySelector('#text-input')
+const title = document.querySelector('#title')
+
+document.addEventListener('keydown', (event) => {
+  title.textContent = `Keydown: ${event.key}`
+})
+
+document.addEventListener('keyup', (event) => {
+  if (event.key === ' ' || event.key === 'Enter') {
+    input.value += '*'
+  }
+})
